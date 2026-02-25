@@ -1,7 +1,7 @@
 'use client'
 import { useMemo, useState } from 'react';
 import { Container, Row, Col, Card, Form, ListGroup, Badge, Button, InputGroup, Modal, Table } from 'react-bootstrap';
-import { Users, Plus, Pencil, Trash2 } from 'react-feather';
+import { Users, Plus, Edit, Trash2 } from 'react-feather';
 import CrmPageHeader from '@/components/crm/CrmPageHeader';
 import AlertAuto from '@/components/crm/AlertAuto';
 import ConfirmDeleteModal from '@/components/crm/ConfirmDeleteModal';
@@ -94,7 +94,7 @@ const PelangganPage = ({ q, setQ, view, activeTab, setActiveTab, onAdd, onEdit, 
                           <td>{c.email}</td>
                           <td>{c.phone || '-'}</td>
                           <td>
-                            <Button size="sm" variant="outline-secondary" className="me-1" onClick={() => openEdit(c)}><Pencil size={14} /> Edit</Button>
+                            <Button size="sm" variant="outline-secondary" className="me-1" onClick={() => openEdit(c)}><Edit size={14} /> Edit</Button>
                             <Button size="sm" variant="outline-danger" onClick={() => setDeleteTarget(c)}><Trash2 size={14} /> Hapus</Button>
                           </td>
                         </tr>
@@ -112,7 +112,7 @@ const PelangganPage = ({ q, setQ, view, activeTab, setActiveTab, onAdd, onEdit, 
                           <Badge bg="success" className="mt-1">Aktif</Badge>
                         </div>
                         <div className="d-flex gap-1">
-                          <Button size="sm" variant="outline-secondary" onClick={() => openEdit(c)}><Pencil size={14} /></Button>
+                          <Button size="sm" variant="outline-secondary" onClick={() => openEdit(c)}><Edit size={14} /></Button>
                           <Button size="sm" variant="outline-danger" onClick={() => setDeleteTarget(c)}><Trash2 size={14} /></Button>
                         </div>
                       </ListGroup.Item>
